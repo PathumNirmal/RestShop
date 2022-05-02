@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-75" style="margin-top: 50px;">
+    <div class="container" style="width: 30%;">
+      <form #productForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="row">
+          <div class="col-50">
+            <h3>Add a Product</h3>
+            
+            <label for="productName"><i class="fa fa-user"></i> Product Name</label>
+            <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is required</small>
+            <input type="text" #name="ngModel" required [class.is-invalid]="name.invalid && name.touched" class="form-control" name="userName" placeholder="Enter Product Name..." [(ngModel)]="productModel.name">
+
+            <label for="price"><i class="fa fa-institution"></i> Price</label>
+            <small class="text-danger" [class.d-none]="price.valid || price.untouched">Email is required</small>
+            <input type="text" #price="ngModel" required [class.is-invalid]="price.invalid && price.touched" class="form-control" name="email" placeholder="Enter Product Price..." [(ngModel)]="productModel.price">
+            
+          </div>
+        </div>
+        <input [disabled]="productForm.form.invalid" class="btn" value="Add Product" type="submit">
+        <button routerLink="/products" value="back" class="btn btn-success"> Back </button>
+      </form>
+    </div>
+  </div>
+</div>

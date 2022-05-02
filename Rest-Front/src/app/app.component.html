@@ -1,0 +1,19 @@
+<div class="container">
+  <ul>
+    <li style="flex: 1"><h2>Rest Shop</h2></li>
+    <li><button class="success" *ngIf="!loggedIn()" routerLink="/login" type="submit">Login</button></li>
+    <li><button class="primary" *ngIf="!loggedIn()" routerLink="/register" type="submit">Register</button></li>
+    <li><button class="nav-link" *ngIf="loggedIn()" (click)="logout()">Logout</button></li>
+  </ul>
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+      <div class="container-fluid">
+        <h2 style="color: aliceblue;">Product List</h2>
+        <div class="d-flex">        
+          <button style="margin-right: 10px; background-color: white; color: green;" *ngIf="!loggedIn()" routerLink="/login" class="btn btn-success" type="submit"  data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
+          <button style="margin-right: 10px; background-color: white; color: blue;" *ngIf="!loggedIn()" routerLink="/register" class="btn btn-success" type="submit"  data-bs-toggle="modal" data-bs-target="#exampleModal">Register</button>
+          <button style="margin-right: 10px; background-color: white; color: red; cursor: pointer;" class="nav-link" *ngIf="loggedIn()" (click)="logout()">Logout</button>
+        </div>
+      </div>
+    </nav><br> -->
+  <router-outlet></router-outlet>
+</div>
