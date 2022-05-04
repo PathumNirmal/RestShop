@@ -10,7 +10,8 @@ import { ProductService } from 'src/app/product.service';
 })
 export class ViewProductComponent implements OnInit {
 
-  product_details!: Product;
+  public productName!: String;
+  public productPrice!: number;
 
   constructor(private productService: ProductService, private route: ActivatedRoute) { }
 
@@ -18,8 +19,8 @@ export class ViewProductComponent implements OnInit {
     this.route.params.subscribe(
       (params: Params) => {
         this.productService.getProduct(params['productId']).subscribe((product: any) => {
-          this.product_details = product?.product;
-          console.log(this.product_details);
+          this.productName = product.product["name"];
+          this.productPrice = product.product["price"];
         })
       }
     )
