@@ -7,7 +7,8 @@ const userSchema = mongoose.Schema({
         unique: true ,
         // match: regular expression on stack overflaw
     },
-    password: { type: String, required: true}
+    password: { type: String, required: true},
+    role: { type: String }
 });
 
 module.exports = mongoose.model('User', userSchema);

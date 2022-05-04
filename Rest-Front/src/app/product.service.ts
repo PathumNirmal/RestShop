@@ -17,7 +17,7 @@ export class ProductService {
     return this.webReqService.get(`products/${productId}`);
   }
 
-  createProduct(product: Product) {
+  createProduct(product: any) {
     return this.webReqService.post('products', product);
   }
 

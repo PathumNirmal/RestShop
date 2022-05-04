@@ -1,9 +1,12 @@
 <div class="container">
   <ul>
-    <li style="flex: 1"><h2>Rest Shop</h2></li>
-    <li><button class="success" *ngIf="!loggedIn()" routerLink="/login" type="submit">Login</button></li>
-    <li><button class="primary" *ngIf="!loggedIn()" routerLink="/register" type="submit">Register</button></li>
-    <li><button class="nav-link" *ngIf="loggedIn()" (click)="logout()">Logout</button></li>
+    <li style="flex-grow: 1; "><h2 style="text-align: left; padding-left: 15px;">Rest Shop</h2></li>
+    <li style="flex-grow: 2; align-self: center;"><h4 style="text-align: center; color: white;">{{userEmail}}</h4></li>
+    <div style="flex-grow: 1;">
+      <li style="float: right;"><button class="success" *ngIf="!loggedIn()" routerLink="/login" type="submit">Login</button></li>
+      <li style="float: right;"><button class="primary" *ngIf="!loggedIn()" routerLink="/register" type="submit">Register</button></li>
+      <li style="float: right;"><button class="nav-link" *ngIf="loggedIn()" (click)="logout()">Logout</button></li>
+    </div>
   </ul>
     <!-- <nav class="navbar navbar-expand-lg navbar-light bg-primary">
       <div class="container-fluid">

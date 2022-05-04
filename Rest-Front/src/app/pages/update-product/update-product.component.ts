@@ -11,7 +11,7 @@ import { ProductService } from 'src/app/product.service';
 export class UpdateProductComponent implements OnInit {
 
   currentProductId!: string;
-  productModel = new Product('', 0);
+  productModel = new Product('', '0');
   update = [
     {propName: 'name', value: ''},
     {propName: 'price', value: 0}

@@ -22,7 +22,8 @@ exports.user_signup = (req, res, next) => {
                         const user = new User({
                             _id: new mongoose.Types.ObjectId(),
                             email: req.body.email,
-                            password: hash
+                            password: hash,
+                            role: 'user'
                         });
                         user
                             .save()
@@ -63,7 +64,8 @@ exports.user_login = (req, res, next) => {
                     const token = jwt.sign(
                         {
                             email: user[0].email,
-                            userId: user[0]._id
+                            userId: user[0]._id,
+                            role: user[0].role
                         }, 
                         process.env.JWT_KEY,
                         {

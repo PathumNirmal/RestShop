@@ -1,19 +1,21 @@
-  <button routerLink="/new-product" class="btn btn-success" type="submit"  data-bs-toggle="modal" data-bs-target="#exampleModal">Add Prdouct</button><br><br>
-  <ul class="responsive-table">
-    <li class="table-header">
-      <div class="col-1">Product Id</div>
-      <div class="col-2">Product Name</div>
-      <div class="col-3">Price</div>
-      <div class="col-4" style="text-align: center;">Actions</div>
-    </li>
-    <li class="table-row" *ngFor="let product of products; index  as i">
-      <div class="col-1" data-label="product Id">{{i+1}}</div>
-      <div class="col-2" data-label="Product Name">{{product.name}}</div>
-      <div class="col-3" data-label="Price">{{"Rs. "+product.price}}</div>
-      <div class="col-4" data-label="Actions">
-        <input [routerLink]="['/products', product._id]" type="button" value="View" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary me-2"/>
-        <input [routerLink]="['/update-product', product._id]" type="button" value="Edit" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success me-2"/>
-        <input (click)="deleteProduct(product._id)" type="button" value="Delete" class="btn btn-danger"/>
-      </div>
-    </li>
-  </ul>
+<button routerLink="/new-product" class="btn btn-success" type="submit"  data-bs-toggle="modal" data-bs-target="#exampleModal">Add Prdouct</button><br><br>
+<ul class="responsive-table">
+  <li class="table-header">
+    <div class="col-1">Product Id</div>
+    <div class="col-2">Product Name</div>
+    <div class="col-3">Price</div>
+    <div class="col-4" style="text-align: center;">Actions</div>
+  </li>
+  <li class="table-row" *ngFor="let product of products; index  as i">
+    <div class="col-1" data-label="product Id">
+      <img style="width: 40px; height: 30px;" src="http://localhost:3000\{{product.productImage}}" alt="image">
+    </div>
+    <div class="col-2" data-label="Product Name">{{product.name}}</div>
+    <div class="col-3" data-label="Price">{{"Rs. "+product.price}}</div>
+    <div class="col-4" data-label="Actions">
+      <input [routerLink]="['/products', product._id]" type="button" value="View" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary me-2"/>
+      <input [routerLink]="['/update-product', product._id]" type="button" value="Edit" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success me-2"/>
+      <input (click)="deleteProduct(product._id)" type="button" value="Delete" class="btn btn-danger"/>
+    </div>
+  </li>
+</ul>

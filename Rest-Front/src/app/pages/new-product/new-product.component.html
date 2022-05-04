@@ -12,7 +12,9 @@
 
             <label for="price"><i class="fa fa-institution"></i> Price</label>
             <small class="text-danger" [class.d-none]="price.valid || price.untouched">Email is required</small>
-            <input type="text" #price="ngModel" required [class.is-invalid]="price.invalid && price.touched" class="form-control" name="email" placeholder="Enter Product Price..." [(ngModel)]="productModel.price">
+            <input type="number" #price="ngModel" required [class.is-invalid]="price.invalid && price.touched" class="form-control" name="email" placeholder="Enter Product Price..." [(ngModel)]="productModel.price"><br>
+
+            <input type="file" (change)="onFileSelected($event)">
             
           </div>
         </div>
