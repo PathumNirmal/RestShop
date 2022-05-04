@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from './auth.guard';
-import { HasRoleGuard } from './has-role.guard';
+import { AuthGuard } from './guards/auth.guard';
+import { HasRoleGuard } from './guards/has-role.guard';
 import { LoginComponent } from './login/login.component';
 import { AllProductComponent } from './pages/all-product/all-product.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
